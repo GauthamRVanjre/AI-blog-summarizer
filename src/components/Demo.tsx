@@ -5,6 +5,7 @@ import linkIcon from "../assets/link.svg";
 // import loader from "../assets/loader.svg";
 // import tick from "../assets/tick.svg";
 const Demo = () => {
+  // const rapidApiKey = import.meta.env.VITE_RAPID_API_KEY;
   const [article, setArticle] = useState({
     url: "",
     summary: "",

@@ -1,13 +1,22 @@
 import logo from "../assets/logo.svg";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
         <img src={logo} alt="logo" className="w-28 object-contain" />
 
-        <button type="button" className="black_btn">
-          GitHub
-        </button>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </nav>
 
       <h1 className="head_text">
