@@ -1,3 +1,4 @@
+import React from "react";
 import logo from "../assets/logo.svg";
 import {
   SignedIn,
@@ -5,7 +6,13 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
-const Hero = () => {
+
+interface HeroProps {
+  fullName: string | null | undefined;
+  id: string | undefined;
+}
+
+const Hero: React.FC<HeroProps> = ({ fullName }) => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3">
@@ -23,7 +30,7 @@ const Hero = () => {
         Summarize Articles with <br className="max-md:hidden" />
         <span className="orange_gradient">OpenAI GPT-4</span>
       </h1>
-      <h2 className="desc">Summarize your articles</h2>
+      {fullName && <h2 className="desc">Hello, {fullName}</h2>}
     </header>
   );
 };
